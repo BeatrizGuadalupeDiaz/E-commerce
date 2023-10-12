@@ -6,4 +6,5 @@ export interface Product {
 export interface type{
     product: Product;
     setCart: any;
+    cart: Product[];
 }
