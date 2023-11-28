@@ -1,12 +1,16 @@
-import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
+import React from "react";
+import { TouchableOpacity, Text } from "react-native";
 
-const Button = () => {
-  return (
-    <TouchableOpacity  onPress={()=> alert('hellow')}>
-        <Text>Press me</Text>
-    </TouchableOpacity>
-  )
-}
-
-export default Button
+import { btnStyles, txtStyles } from "./styles";
+import { Props } from "./types";
+export const CustomButton = ({ text, onClick, type = "default" }: Props) => {
+    return (
+        <TouchableOpacity
+            onPress={onClick}
+            style={{ ...btnStyles.general, ...btnStyles[type] }}>
+            <Text style={{ ...txtStyles.general, ...txtStyles[type] }}>
+                {text}
+            </Text>
+        </TouchableOpacity>
+    );
+};

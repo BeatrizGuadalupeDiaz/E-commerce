@@ -8,17 +8,18 @@ import {
     View,
 } from "react-native";
 import { FlashList } from "@shopify/flash-list";
+
 import { Card } from "../components/index";
 import { stylesGlobal } from "../styles/styles";
 import { AntDesign } from "@expo/vector-icons";
 import type { rootState } from "../app/store";
-import { useSelector, useDispatch } from "react-redux"; //leer estado - funciones(pone valor)
+import { useSelector } from "react-redux"; //leer estado - funciones(pone valor)
 import { products } from "../test";
+import { CustomButton } from "../components/Button";
 
 const INITIAL_VALUE = 0;
 
 export default function Home() {
-
     const cart = useSelector((state: rootState) => state.cart.product);
     //renderizar el componente
     const total = cart
