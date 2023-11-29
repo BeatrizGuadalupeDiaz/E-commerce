@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 
+import { Colors } from "../../constants/Colors";
+
 export const btnStyles = StyleSheet.create({
     general: {
         padding: 10,
@@ -7,10 +9,10 @@ export const btnStyles = StyleSheet.create({
         justifyContent: "center",
     },
     default:{
-        backgroundColor: "#DFDFDF",
+        backgroundColor: Colors.gray,
     },
     add: {
-        backgroundColor: "#33C676",
+        backgroundColor: Colors.tertiary,
     },
 });
 export const txtStyles = StyleSheet.create({
@@ -19,9 +21,9 @@ export const txtStyles = StyleSheet.create({
         fontWeight: "700",
     },
     default:{
-        color: "black",
+        color: Colors.black,
     },
     add: {
-        color: "white",
+        color: Colors.white,
     },
 });

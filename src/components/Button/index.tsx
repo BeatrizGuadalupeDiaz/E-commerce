@@ -3,7 +3,8 @@ import { TouchableOpacity, Text } from "react-native";
 
 import { btnStyles, txtStyles } from "./styles";
 import { Props } from "./types";
-export const CustomButton = ({ text, onClick, type = "default" }: Props) => {
+
+const CustomButton = ({ text, onClick, type = "default" }: Props) => {
     return (
         <TouchableOpacity
             onPress={onClick}
@@ -14,3 +15,5 @@ export const CustomButton = ({ text, onClick, type = "default" }: Props) => {
         </TouchableOpacity>
     );
 };
+
+export default CustomButton;
