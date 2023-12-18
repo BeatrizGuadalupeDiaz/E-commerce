@@ -1,11 +1,6 @@
 import React from "react";
-import {
-    SafeAreaView,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
-import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import { FlashList } from "@shopify/flash-list";
 
@@ -22,7 +17,8 @@ import { UserStackParams } from "../../navigation/user/Stack";
 const INITIAL_VALUE = 0;
 
 export default function Home() {
-    const navigation = useNavigation<NativeStackNavigationProp<UserStackParams>>();
+    const navigation =
+        useNavigation<NativeStackNavigationProp<UserStackParams>>();
     const cart = useSelector((state: rootState) => state.cart.product);
     //renderizar el componente
     const total = cart
@@ -40,7 +36,8 @@ export default function Home() {
                     <Text style={[stylesGlobal.title, { color: Colors.white }]}>
                         {cart.length}
                     </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("Cart")}>
                         <AntDesign
                             name="shoppingcart"
                             size={24}
