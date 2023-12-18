@@ -1,12 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
-    Alert,
     SafeAreaView,
     Text,
     TouchableOpacity,
     View,
 } from "react-native";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 import { FlashList } from "@shopify/flash-list";
 
 import { Card } from "../../components/index";
@@ -17,10 +17,12 @@ import { useSelector } from "react-redux"; //leer estado - funciones(pone valor)
 import { products } from "../../test";
 import { Colors } from "../../constants/Colors";
 import { styles } from "./styles";
+import { UserStackParams } from "../../navigation/user/Stack";
 
 const INITIAL_VALUE = 0;
 
 export default function Home() {
+    const navigation = useNavigation<NativeStackNavigationProp<UserStackParams>>();
     const cart = useSelector((state: rootState) => state.cart.product);
     //renderizar el componente
     const total = cart
@@ -38,7 +40,7 @@ export default function Home() {
                     <Text style={[stylesGlobal.title, { color: Colors.white }]}>
                         {cart.length}
                     </Text>
-                    <TouchableOpacity onPress={() => alert("Cart")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
                         <AntDesign
                             name="shoppingcart"
                             size={24}
@@ -58,8 +60,6 @@ export default function Home() {
                     estimatedItemSize={100}
                 />
             </View>
-
-            <StatusBar style="auto" />
         </SafeAreaView>
     );
 }

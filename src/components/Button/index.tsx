@@ -1,10 +1,10 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, TouchableOpacityProps } from "react-native";
 
 import { btnStyles, txtStyles } from "./styles";
 import { Props } from "./types";
-
-const CustomButton = ({ text, onClick, type = "default" }: Props) => {
+type ButtonProps = TouchableOpacityProps & Props;
+const CustomButton = ({onClick,text,type='default'} : ButtonProps) => {
     return (
         <TouchableOpacity
             onPress={onClick}
