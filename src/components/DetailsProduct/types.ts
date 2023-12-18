@@ -1,7 +1,7 @@
 export interface Props {
-    addToCart: (product: Product) => void;
-    removeFromCart: (product: Product) => void;
+    id: number;
     cart: Product[];
+    product: Product;
 }
 
 export interface Product {
